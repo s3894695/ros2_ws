@@ -9,9 +9,9 @@ def generate_launch_description():
 
     # Use find_package to locate the paths of the individual packages
     #rosbot_controller_pkg_dir = get_package_share_directory('rosbot_controller')
-    rosbot_description_pkg_dir = get_package_share_directory('rosbot_description')
-    nav2_bringup_pkg_dir = get_package_share_directory('nav2_bringup')
-    #rosbot_bringup_pkg_dir = get_package_share_directory('rosbot_bringup')
+    #rosbot_description_pkg_dir = get_package_share_directory('rosbot_description')
+    #nav2_bringup_pkg_dir = get_package_share_directory('nav2_bringup')
+    rosbot_bringup_pkg_dir = get_package_share_directory('rosbot_bringup')
 
     # Add the launch files of the individual packages
     '''rosbot_controller_launch = IncludeLaunchDescription(
@@ -25,19 +25,19 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(rosbot_bringup_pkg_dir + '/launch/bringup.launch.py')
     )'''
 
-    nav2_bringup_launch = IncludeLaunchDescription(
+    '''nav2_bringup_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(rosbot_description_pkg_dir + '/launch/rosbot_navigation_pro.launch.py')
     )
 
     nav2_bringup_loc_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(nav2_bringup_pkg_dir + '/launch/localization_launch.py')
-    )
+    )'''
 
     # Add the actions to the launch description
     #ld.add_action(rosbot_controller_launch)
     ld.add_action(rosbot_description_launch)
     #ld.add_action(rosbot_bringup_launch)
-    ld.add_action(nav2_bringup_launch)
-    ld.add_action(nav2_bringup_loc_launch)
+    #ld.add_action(nav2_bringup_launch)
+    #ld.add_action(nav2_bringup_loc_launch)
 
     return ld
