@@ -18,7 +18,7 @@ def generate_launch_description():
         PythonLaunchDescriptionSource(rosbot_controller_pkg_dir + '/launch/controller.launch.py')
     )'''
     rosbot_description_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(rosbot_description_pkg_dir + '/launch/rosbot_pro.launch.py')
+        PythonLaunchDescriptionSource('./ros2_ws/src/rosbot_description' + '/launch/rosbot_pro.launch.py')
     )
 
     '''rosbot_bringup_launch = IncludeLaunchDescription(
