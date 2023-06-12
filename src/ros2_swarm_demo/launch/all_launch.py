@@ -14,7 +14,7 @@ def generate_launch_description():
     # Add the launch files of the individual packages
 
     nav2_bringup_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(nav2_bringup_pkg_dir + '/launch/navigation_launch.py')
+        PythonLaunchDescriptionSource(nav2_bringup_pkg_dir + '/launch/bringup_launch.py')
     )
 
     nav2_bringup_loc_launch = IncludeLaunchDescription(
